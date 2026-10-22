@@ -66,9 +66,9 @@ See [`notebooks/walkthrough.ipynb`](notebooks/walkthrough.ipynb) for the full an
 
 ## Upstream contribution
 
-This project relies on `astropy.stats.fold_intervals`. In Astropy ≤ 8.0.x that function loses one full cycle of coverage for any window ending exactly on a cycle boundary. A single complete cycle gets zero exposure, and `cdf_from_intervals` then raises an error. I submitted a fix for this upstream: [astropy/astropy#20671](https://github.com/astropy/astropy/pull/20671).
+This project relies on `astropy.stats.fold_intervals`. In Astropy ≤ 8.0.x that function loses one full cycle of coverage for any window ending exactly on a cycle boundary. A single complete cycle gets zero exposure, and `cdf_from_intervals` then raises an error. I fixed this upstream in [astropy/astropy#20671](https://github.com/astropy/astropy/pull/20671), merged for Astropy v8.1.0.
 
-`phasecover` probes for the faulty behaviour at import time and corrects for it, so results are right on both old and fixed Astropy versions. The test suite passes on both.
+Until v8.1.0 is released, `phasecover` probes for the faulty behaviour at import time and corrects for it, so results are right on both old and fixed Astropy versions. The test suite passes on both.
 
 ## Project layout
 
